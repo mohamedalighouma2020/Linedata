@@ -1,0 +1,25 @@
+pipeline {
+  agent any 
+
+  tools  {
+     maven "3.0.4"
+        }
+
+stages {
+  stage ("build") {
+
+  steps {
+       sh "mvn -version"
+         }
+        }
+
+stage ("Test") {
+            ech"Test"
+               }
+       }
+ post {
+    always {
+       cleanWs()
+         }
+       }
+     }
